@@ -1,0 +1,29 @@
+<h1>StaticPage#index</h1>
+<p>
+	<%= link_to "Posts", microposts_path %>
+	<%= link_to "Categories", categories_path %>
+
+
+	<% if user_signed_in? %>
+		<%= current_user.email %>
+		<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+	<% else %>
+		<%= link_to "Sign in", user_session_path %>
+		<%= link_to "Sign up", new_user_registration_path  %>
+	<% end %>
+</p>
+
+<p class="container">
+	<ul>
+		<strong>Categories</strong>
+		<li><%= link_to "Mathematics", '#' %></li>
+		<li><%= link_to "Operating Systems", '#' %></li>
+		<li>Java</li>
+		<li>Cpp</li>
+		<li>C</li>
+		<li>DBMS</li>
+		<li>AI</li>
+	</ul>
+	
+
+</p>
