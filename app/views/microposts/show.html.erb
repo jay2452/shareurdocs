@@ -10,5 +10,11 @@
   <%= @micropost.content %>
 </p>
 
+<p>
+	<% if @micropost.file.exists? %>
+		<%= link_to "file", @micropost.file.url %>
+	<% end -%>
+</p>
+
 <%= link_to 'Edit', edit_micropost_path(@micropost) %> |
 <%= link_to 'Back', microposts_path %>
