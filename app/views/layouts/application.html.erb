@@ -5,38 +5,14 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+ 
 </head>
 <body>
-<div class="container">
-	<header>
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<%= link_to "Homepage", root_path %>
-				</div>
-				<div>
-					<ul class="nav navbar-nav">
-						<li class="active">users</li>
-						<li>users</li>
-					</ul>
-						<ul class="nav navbar-nav navbar-right">
-							<li></li>
-							<li>users</li>	
-						</ul>
-				</div>				
-			</div>
-		</div>
-	</header>
-
-	<div class="contaner">
-		<br><br><p class="alert"><%= alert %></p>		<br>
+	<%= render 'layouts/header' %>
+		<div class="alert"><%= alert %></div>
 		<%= yield %>
-	</div>
 
-	<footer>
-		
-	</footer>
-</div>
+	<%= render 'layouts/footer' %>
 
 </body>
 </html>

@@ -41,6 +41,8 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'puma'
 end
 
 gem 'bootstrap-sass'
@@ -48,3 +50,8 @@ gem 'devise'
 gem 'cancan'
 gem 'bootstrap-datepicker-rails' 
 gem 'paperclip'
+
+gem 'acts_as_tree'
+gem "font-awesome-rails"
+gem 'topcoat-rails'
+gem 'purecss-rails'

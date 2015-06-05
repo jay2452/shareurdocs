@@ -10,6 +10,8 @@ class MicropostsController < ApplicationController
   # GET /microposts/1
   # GET /microposts/1.json
   def show
+    @comments = Comment.all
+    @comment = Comment.new
   end
 
   # GET /microposts/new

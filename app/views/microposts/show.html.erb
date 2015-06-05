@@ -16,5 +16,23 @@
 	<% end -%>
 </p>
 
+<p>
+	<strong>Comments</strong>
+  
+  	<% @comments.each do |comment| %>
+  		<%= comment.content %>
+  	<% end -%>
+
+  	<%= form_for(@comment) do |f| %>
+  		<div class="field">
+		    <%= f.label :content %><br>
+		    <%= f.text_field :content %>
+	    </div>
+		<div class="actions">
+		    <%= f.submit(micropost_id: @micropost.id) %>
+		</div>
+  	<% end -%>
+</p>
+
 <%= link_to 'Edit', edit_micropost_path(@micropost) %> |
 <%= link_to 'Back', microposts_path %>

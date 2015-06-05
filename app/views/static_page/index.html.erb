@@ -1,24 +1,57 @@
-<h1>StaticPage#index</h1>
-<p>
-	<%= link_to "Posts", microposts_path %>
-
-
-	<% if user_signed_in? %>
-		<%= current_user.email %>
-		<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-	<% else %>
-		<%= link_to "Sign in", user_session_path %>
-		<%= link_to "Sign up", new_user_registration_path  %>
-	<% end %>
-</p>
-
-<p class="container">
-	<ul>
-		<strong><%= link_to "Categories", categories_path %></strong>
-		<% @categories.each do |category| %>
-			<li><%= link_to "#{category.name}", '#' %></li>
-		<% end -%>
-	</ul>
+<div class="home_page">
 	
+	<div class="container">
+		<nav class="navbar navbar">
+			<div class="container-fluid">
+				<div>
+					<ul class="nav navbar-nav">
+						<li id="about"><a href="#">About</a></li>
+						<li id="contact"><a href="#"> Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<h1>StaticPage#index</h1>
+	
+		<p>
+			<%= link_to "Posts", microposts_path %>
+		</p>
 
-</p>
+		<strong><%= link_to "Categories", categories_path %></strong>
+				<% @categories.each do |category| %>
+					<li><%= link_to "#{category.name}", '#' %></li>
+		<% end -%>
+	</div>
+	<% if !user_signed_in? %>
+		<div class="sign_up_on_home pure-form">
+			<%= link_to "Sign Up Now", new_user_registration_path, class: "pure-button pure-input-1-2 btn-lg pure-button-primary center jumbotron" %>
+		</div>
+	<% end -%>
+	<div align="center" class="arrow_down">
+		<i class="fa fa-caret-square-o-down"></i>
+	</div>	
+</div>
+	<br>
+	<div class="about" id="about_us">
+		<h3 align="center"><b>About Us</b></h3>
+	</div>
+
+	<div class="contact" id="contact_info">
+		<h3 align="center"><b>Contact</b> </h3>
+	</div>
+
+<script>	
+	$("#contact").click(function () {
+		// body...
+		$('html, body').animate({
+			scrollTop: $("#contact_info").offset().top
+		}, 1000);
+	});
+
+	$("#about").click(function () {
+		// body...
+		$('html, body').animate({
+			scrollTop: $("#about_us").offset().top
+		}, 1000);
+	});
+</script>
